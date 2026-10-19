@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skill Bridge</title>
+
+    <style>
+        body{
+            background-color: #e9e9e9;
+            margin: 0;
+        }
+        #navbar{
+            background-color: aliceblue;
+            height: 65px;
+            padding: 10px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        #logo{
+            width: 70px;
+            height: 50px;
+        }
+        #head{
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            gap: 70px;
+        }
+        #head p{
+            margin: 0;
+            font-size: 20px;
+            cursor: pointer;
+        }
+        #head a{
+            text-decoration: none;
+            color: rgb(76, 76, 76);
+            transition: 0.5s;
+        }
+        #head p :hover{
+            color: black;
+        }
+        #button{
+            cursor: pointer;
+            margin-right: 20px;
+            font-size: 16px;
+            padding: 14px 17px;
+            background-color: rgb(27, 178, 27);
+            border: 1.5px solid black;
+            border-radius: 5px;
+            transition: 0.8s;
+        }
+        #button:hover{
+            border-radius: 17px;
+            background-color: rgb(23, 147, 23);
+        }
+        #sec1{
+            text-align: center;
+            margin-top: 200px;
+        }
+        #fh1{
+            font-family: system-ui, -apple-system, BlinkMacSystemFont,'Segoe UI', Roboto, sans-serif;
+            font-size: 50px;
+            font-weight: 800;
+            color: #0f172a;
+            margin: 0;
+        }
+        #button1{
+            width: 15%;
+            min-width: 180px;
+            font-size: 18px;
+            padding: 16px 32px;
+            cursor: pointer;
+            border: 0;
+            background-color: rgb(77, 77, 228);
+            color: white;
+            border-radius: 10px;
+            transition: 0.8s;
+        }
+        #button1:hover{
+            background-color: rgb(59, 59, 225);
+            border-radius: 20px;
+        }
+        #sec2{
+            margin-top: 160px;
+            background-color: #F9FAFD;
+            padding-bottom: 50px;
+        }
+        #sec2 h1{
+            font-family: system-ui, -apple-system, BlinkMacSystemFont,'Segoe UI', Roboto, sans-serif;
+            padding-top: 40px;
+            margin-left: 120px;
+        }
+        #cards{
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+        #card{
+            cursor: pointer;
+            border: 2px solid rgb(237, 237, 237);
+            width: 275px;
+            height: 300px;
+            background-color: white;
+            border-radius: 10px;
+            padding: 15px;
+            transition: 0.8s;
+        }
+        #card:hover{
+            border-radius: 20px;
+            border: 2px solid rgb(210, 210, 210);
+            box-shadow:0px 8px 8px 0px rgb(210, 210, 210);
+        }
+        #card p{
+            margin: 0;
+            font-size: 20px;
+            font-weight: 600;
+            font-family:Inter, Helvetica, Arial, sans-serif;
+            text-align: center;
+        }
+        #ul{
+            margin-top: 50px;
+            font-size: 20px;
+        }
+        #ul li{
+            margin-bottom: 15px;
+        }
+        #button2{
+            color: white;
+            width: 15%;
+            min-width: 180px;
+            font-size: 18px;
+            padding: 16px 32px;
+            cursor: pointer;
+            border: 0;
+            background-color: rgb(27, 178, 27);
+            color: white;
+            border-radius: 10px;
+            transition: 0.8s;
+        }
+        #button2:hover{
+            background-color: rgb(23, 147, 23);
+            border-radius: 20px;
+        }
+    </style>
+</head>
+<body>
+    <nav id="navbar">
+        <img src="logo.png" alt="Logo" id="logo">
+
+        <h1 style="font-family:Inter, Helvetica, Arial, sans-serif;">
+            Skill Bridge
+        </h1>
+
+        <div id="head">
+            <p><a href="index.html">Home</a></p>
+            <p><a href="#">About Us</a></p>
+            <p><a href="#">Contact Us</a></p>
+        </div>
+
+        <button id="button"><a href="#" style="text-decoration: none; color: black;">Register</a></button>
+    </nav>
+
+    <section id="sec1">
+        <h1 id="fh1">
+            Learn Any Skill. Teach What You Know.
+            <br>
+            Completely Free.
+        </h1><br>
+
+        <p style="font-size:20px;">
+            Connect with fellow students for tutoring,
+            coding sessions, and creative workshops.
+        </p><br>
+
+        <button id="button1">
+            <strong>ABOUT US</strong>
+        </button>
+    </section>
+
+    <section id="sec2">
+        <h1>Popular Knowledge Domains</h1>
+        <div id="cards">
+            <div id="card">
+                <p>📘 Academics & Math</p>
+                <ul id="ul">
+                    <li>Calculus</li>
+                    <li>Chemistry</li>
+                    <li>Physics</li>
+                    <li>Statistics</li>
+                    <li>Economics</li>
+                </ul>
+            </div>
+            <div id="card">
+                <p>💻 Technology & Coding</p>
+                <ul id="ul">
+                    <li>Python</li>
+                    <li>React</li>
+                    <li>Data Structure</li>
+                    <li>UI/UX</li>
+                    <li>SQL Database</li>
+                </ul>
+            </div>
+            <div id="card">
+                <p>🎨 Languages & Culture</p>
+                <ul id="ul">
+                    <li>Spanish</li>
+                    <li>French</li>
+                    <li>Japanese</li>
+                    <li>Mandarin</li>
+                    <li>ESL Practice</li>
+                </ul>
+            </div>
+            <div id="card">
+                <p>🎵 Arts & Music</p>
+                <ul id="ul">
+                    <li>Acoustic Guitar</li>
+                    <li>Piano</li>
+                    <li>Digital Art</li>
+                    <li>Photography</li>
+                    <li>Writing</li>
+                </ul>
+            </div>
+        </div>
+        <div style="text-align: center;">
+        <p style="margin-top: 90px; font-size: 20px; font-family:Inter, Helvetica, Arial, sans-serif; text-align: center;"><strong> If You Have Any Query </strong></p>
+        <button id="button2"><a href="#" style="text-decoration: none; color: white;">Contant Us</a></button>
+        </div>
+    </section>
+
+</body>
+</html>
