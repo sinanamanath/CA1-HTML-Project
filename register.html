@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration</title>
+    <style>
+        body{
+            background-color: rgb(239, 239, 239);
+        }
+        #main{
+            margin: auto;
+            margin-top: 7%;
+            width: 65%;
+            height: 540px;
+            background-color: rgb(255, 255, 255);
+            border-radius: 60px;
+            box-shadow: 0px 10px 20px 0px rgb(158, 158, 158);
+            display: flex;
+        }
+        #sub1{
+            width: 50%;
+            height: 100%;
+            background-color: #232354;
+            border-radius: 60px 1px 1px 60px;
+        }
+        #sub2{
+            width: 50%;
+            height: 100%;
+            background-color: white;
+            border-radius: 1px 60px 60px 1px;
+            text-align: center;
+            font-family: 'Inter', 'Poppins', 'Roboto', sans-serif;
+        }
+        #A{
+            text-align: center;
+            color: white;
+            font-family: 'Inter', 'Poppins', 'Roboto', sans-serif;
+            font-size: 40px;
+        }
+        #B{
+            font-size: 18px;
+            text-align: center;
+            padding: 30px 55px 0 55px;
+            color: rgb(208, 207, 207); 
+            font-family: 'Inter', 'Poppins', 'Roboto', sans-serif;
+        }
+        #C{
+            padding-top: 50px;
+            padding-bottom: 20px;
+        }
+        #D{
+            border:none;
+            text-align: center;
+            width: 200px;
+            padding: 15px 0;
+            background-color: #7c37c1;
+            font-size: 20px;
+            border-radius: 10px;
+            color: white;
+            cursor: pointer;
+            transition: 0.8s;
+        }
+        #D:hover{
+            background-color: #7424c4;
+            border-radius: 18px;
+        }
+        #img{
+            margin-top: 60px;
+        }
+    </style>
+</head>
+<body>
+    <div id="main">
+        <div id="sub1">
+            <div id="img" style="text-align: center;">
+            <img src="logo.png" width="130px" height="90px" style="margin-top: 12px;">
+            </div>
+            <h1 id="A">SkillBridge</h1>
+            <p id="B">Ready to level up your learning? Sign in to stream your courses, collaborate with peers, and stay on top of your assignments. Your personalized learning toolkit is just a login away. Let's get to work.We're so glad you're here to grow with us today. Dive back into your lessons, connect with your classmates, and discover something new. Log in below to get started!
+            </p>
+        </div>
+        <div id="sub2">
+            <h1 id="C">Sign Up</h1>
+            <form>
+                <input type="text" placeholder="Full Name" minlength="5" maxlength="12" required style="border:none; border-bottom: 1px solid #ccc; text-align: center; width: 300px; padding: 10px 0; margin-bottom: 30px;">
+                <input type="text" placeholder="User Name" minlength="3" maxlength="10" required style="border:none; border-bottom: 1px solid #ccc; text-align: center; width: 300px; padding: 10px 0 ; margin-bottom: 30px;">
+                <input type="email" placeholder="Email" required style="border:none; border-bottom: 1px solid #ccc; text-align: center; width: 300px; padding: 10px 0; margin-bottom: 30px;">
+                <input type="password" placeholder="Password" minlength="5" maxlength="15" required style="border:none; border-bottom: 1px solid #ccc; text-align: center; width: 300px; padding: 10px 0; margin-bottom: 40px;">
+                <input id="D" type="submit" required>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
