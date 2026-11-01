@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SKILL BRIDGE</title>
+    <style>
+        *{
+            margin: 0;
+        }
+        section{
+            display: flex;
+        }
+
+        #side{
+            width: 25%;
+            height: 100vh;
+            background-color: #111d32;
+            text-align: center;
+            position :fixed;
+        }
+
+        #main{
+            width: 75%;
+            height: 100vh;
+            background-color: rgb(248, 248, 248);
+            margin-left: 384px;
+        }
+        #A{
+            display: inline-block;
+            font-size: 20px;
+            font-family:Helvetica, Arial, sans-serif;
+            margin-top: 50px;
+            background-color: #5E46E8;
+            padding: 10px 25px;
+            color: white;
+            border-radius: 10px;
+            transition: 0.8s;
+            cursor: pointer;
+        }
+        #A:hover{
+            background-color: #4c31e4;
+            border-radius: 20px;
+        }
+        #bar{
+            width: 100%;
+            height: 90px;
+            background-color: rgb(9, 9, 36);
+            position: absolute;
+            bottom: 0;
+            color: white;
+            font-family:Helvetica, Arial, sans-serif;
+            font-size: 20px;
+        }
+        #nav{
+            margin-right: 40px;
+            width: 1152px;
+            height: 90px;
+            background-color: white;
+            box-shadow: 0px 0px 20px rgb(231, 230, 230);
+        }
+        #K:hover{
+            background-color: rgb(215, 214, 214);
+        }
+        .card{
+            width: 235px;
+            height: 200px;
+            background-color: white;
+            border-radius: 20px;
+            border: 1px solid rgb(231, 231, 231);
+        }
+        #boxcard{
+            margin-left: 60px;
+            margin-top: 65px;
+            display: flex;
+
+        }
+        #card2,#card3,#card4{
+            margin-left: 30px;
+        } 
+        #card1,#card2,#card3,#card4{
+            box-shadow: 0px 10px 20px 0px rgb(212, 211, 211);
+            text-align: center;
+        } 
+    </style>
+</head>
+<body>
+    <section>
+        <div id="side">
+            <h1 style="font-family:Inter, Helvetica, Arial, sans-serif; color: white; text-align: center; margin: 25px;">
+                <ins>SkillBridge</ins>
+            </h1>
+            <p id="A" style="margin-top: 130px; padding: 10px 35px;">Dashboard</p><br>
+            <p id="A">Explore More</p><br>
+            <p id="A" style="padding: 10px 58px;">Profile</p>
+            <div id="bar"><a href="index.html" style=" text-decoration: none;"><p style="margin-top: 39px; color: white;">Log Out</p><a></a></div>
+        </div>
+        <div id="main">
+            <nav id="nav">
+                <h1 style="font-family:Helvetica, Arial, sans-serif; margin-left: 50px; padding-top: 30px;">Dashboard Overview</h1>
+            </nav>
+            <div style="width: 90%; height: 300px; background-color: #5E46E8; margin-left: 60px; margin-top: 60px; border-radius: 30px;">
+                <h1 style="font-family: Helvetica, Arial, sans-serif; padding-top: 30px; margin-left: 45px; font-size: 35px;">Welcome to Skill Bridge</h1>
+                <p style="font-size: 23px; margin: 40px 50px 0px 50px; font-family: Helvetica, Arial, sans-serif;">Ready to level up your learning? stream your courses, collaborate with peers, and stay on top of your assignments.Let's get to work.We're so glad you're here to grow with us today. Dive back into your lessons, connect with your classmates, and discover something new</p>
+                <a><button id="K" style="padding: 15px; font-size: 17px; margin-left: 47px; margin-top: 25px; border-radius: 10px; border:  none; color: #5E46E8; font-weight: bold; cursor: pointer; transition: 0.5s;">Explore More</button></a>
+            </div>
+            <div id="boxcard">
+                <div class="card" id="card1"><h2 style="margin-top: 25px;">Total Skills</h2>
+                <h1 style="font-size: 40px; margin-top: 25px;">6</h1>
+                <h2>Skills</h2>
+                </div>
+                <div class="card" id="card2"><h2 style="margin-top: 25px;">Total Topics</h2>
+                <h1 style="font-size: 40px; margin-top: 25px;">5</h1>
+                <h2>Topics</h2>
+                </div>
+                <div class="card" id="card3"><h2 style="margin-top: 25px;">Total Hours</h2>
+                <h1 style="font-size: 40px; margin-top: 25px;">26</h1>
+                <h2>Hours</h2>
+                </div>
+                <div class="card" id="card4"><h2 style="margin-top: 25px;">Our Rating</h2>
+                <h1 style="font-size: 40px; margin-top: 20px; display: inline-block;">4.9 /</h1><h2 style="font-size: 33px; display: inline-block; opacity: 0.7;"> 5.0</h2>
+                <h2></h2>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
