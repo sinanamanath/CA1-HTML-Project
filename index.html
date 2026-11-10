@@ -3,9 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Skill Bridge</title>
+    <title>SkillBridge</title>
 
     <style>
+        *{
+            scroll-behavior: smooth;
+        }
         body{
             background-color: #e9e9e9;
             margin: 0;
@@ -145,6 +148,205 @@
             background-color: rgb(23, 147, 23);
             border-radius: 20px;
         }
+        a#button2{
+            display: inline-block;
+            box-sizing: border-box;
+            text-align: center;
+            text-decoration: none;
+        }
+        #contact{
+            padding: 60px 20px 70px;
+            text-align: center;
+            background-color: white;
+        }
+        #contact h1{
+            font-family: system-ui, -apple-system, BlinkMacSystemFont,'Segoe UI', Roboto, sans-serif;
+            font-size: 40px;
+            color: #0f172a;
+            margin: 0 0 10px;
+        }
+        #contact .sub{
+            font-size: 20px;
+            margin: 0;
+        }
+        .profiles{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 40px;
+        }
+        .profile{
+            width: 260px;
+            padding: 30px 20px;
+            background-color: #F9FAFD;
+            border: 2px solid rgb(237, 237, 237);
+            border-radius: 10px;
+            transition: 0.8s;
+        }
+        .profile:hover{
+            border-radius: 20px;
+            border: 2px solid rgb(210, 210, 210);
+            box-shadow: 0px 8px 8px 0px rgb(210, 210, 210);
+        }
+        .avatar{
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 15px;
+            border-radius: 50%;
+            background-color: rgb(77, 77, 228);
+            color: white;
+            font-size: 34px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .profile h2{
+            font-family: Inter, Helvetica, Arial, sans-serif;
+            font-size: 24px;
+            margin: 0 0 20px;
+        }
+        .linkedin{
+            display: inline-block;
+            padding: 12px 28px;
+            font-size: 17px;
+            background-color: #0A66C2;
+            color: white;
+            text-decoration: none;
+            border-radius: 10px;
+            transition: 0.8s;
+        }
+        .linkedin:hover{
+            background-color: #004182;
+            border-radius: 20px;
+        }
+        .mail{
+            margin-top: 50px;
+            font-size: 20px;
+            font-family: Inter, Helvetica, Arial, sans-serif;
+        }
+        .mail a{
+            color: rgb(77, 77, 228);
+            font-weight: 600;
+            text-decoration: none;
+        }
+        .mail a:hover{
+            text-decoration: underline;
+        }
+        a#button1{
+            display: inline-block;
+            box-sizing: border-box;
+            text-align: center;
+            text-decoration: none;
+        }
+        #about{
+            padding: 60px 20px 70px;
+            text-align: center;
+            background-color: #eef1fb;
+        }
+        #about h1{
+            font-family: system-ui, -apple-system, BlinkMacSystemFont,'Segoe UI', Roboto, sans-serif;
+            font-size: 40px;
+            color: #0f172a;
+            margin: 0 0 10px;
+        }
+        .tagline{
+            font-size: 22px;
+            font-weight: 600;
+            color: rgb(77, 77, 228);
+            margin: 0 0 30px;
+        }
+        .about-text{
+            max-width: 800px;
+            margin: 0 auto 15px;
+            font-size: 20px;
+            line-height: 1.6;
+        }
+        .sub-head{
+            font-family: Inter, Helvetica, Arial, sans-serif;
+            font-size: 28px;
+            color: #0f172a;
+            margin: 55px 0 25px;
+        }
+        .steps{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+        .step{
+            width: 235px;
+            padding: 25px 18px;
+            background-color: white;
+            border: 2px solid rgb(237, 237, 237);
+            border-radius: 10px;
+            transition: 0.8s;
+        }
+        .step:hover{
+            border-radius: 20px;
+            border: 2px solid rgb(210, 210, 210);
+            box-shadow: 0px 8px 8px 0px rgb(210, 210, 210);
+        }
+        .num{
+            width: 46px;
+            height: 46px;
+            margin: 0 auto 12px;
+            border-radius: 50%;
+            background-color: rgb(77, 77, 228);
+            color: white;
+            font-size: 22px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .icon{
+            font-size: 36px;
+            margin-bottom: 8px;
+        }
+        .step h3{
+            font-family: Inter, Helvetica, Arial, sans-serif;
+            font-size: 20px;
+            margin: 0 0 8px;
+        }
+        .step p{
+            margin: 0;
+            font-size: 17px;
+            line-height: 1.5;
+        }
+        .features{
+            max-width: 850px;
+            margin: 0 auto;
+            padding: 0;
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 12px;
+        }
+        .features li{
+            padding: 10px 20px;
+            font-size: 18px;
+            background-color: white;
+            border: 2px solid rgb(237, 237, 237);
+            border-radius: 999px;
+        }
+        a.cta{
+            display: inline-block;
+            margin-top: 55px;
+            padding: 16px 32px;
+            font-size: 18px;
+            background-color: rgb(27, 178, 27);
+            color: white;
+            text-decoration: none;
+            border-radius: 10px;
+            transition: 0.8s;
+        }
+        a.cta:hover{
+            background-color: rgb(23, 147, 23);
+            border-radius: 20px;
+        }
     </style>
 </head>
 <body>
@@ -157,8 +359,8 @@
 
         <div id="head">
             <p><a href="#navbar">Home</a></p>
-            <p><a href="#">About Us</a></p>
-            <p><a href="#">Contact Us</a></p>
+            <p><a href="#about">About Us</a></p>
+            <p><a href="#contact">Contact Us</a></p>
         </div>
 
         <a href="register.html" id="button">Register</a>
@@ -176,9 +378,9 @@
             coding sessions, and creative workshops.
         </p><br>
 
-        <button id="button1">
+        <a href="#about"><button id="button1">
             <strong>ABOUT US</strong>
-        </button>
+        </button></a>
     </section>
 
     <section id="sec2">
@@ -227,11 +429,102 @@
         </div>
         <div style="text-align: center;">
         <p style="margin-top: 90px; font-size: 20px; font-family:Inter, Helvetica, Arial, sans-serif; text-align: center;"><strong> If You Have Any Query </strong></p>
-        <button id="button2"><a href="#" style="text-decoration: none; color: white;">Contant Us</a></button>
+        <button id="button2"><a href="#contact" style="text-decoration: none; color: white;">Contant Us</a></button>
         </div>
     </section>
-    <section>
-        
+    
+    <section id="about">
+        <h1>About SkillBridge</h1>
+        <p class="tagline">Learn any skill. Teach what you know.</p>
+
+        <p class="about-text">
+            SkillBridge is a web-based peer tutoring and skill exchange platform that connects students who can teach a subject or skill with students who want to learn it. Whether you are strong in Calculus, Python, Photography or Spanish, there is someone on campus who can learn from you, and someone you can learn from.
+        </p>
+        <p class="about-text">
+            <strong>Our mission:</strong> to encourage peer-to-peer learning and create a structured environment where students can exchange knowledge and skills, completely free.
+        </p>
+
+        <h2 class="sub-head">How it works</h2>
+        <div class="steps">
+            <div class="step">
+                <div class="num">1</div>
+                <h3>Create your profile</h3>
+                <p>Sign up and tell us who you are.</p>
+            </div>
+            <div class="step">
+                <div class="num">2</div>
+                <h3>List your skills</h3>
+                <p>Add what you can teach, what you want to learn, and when you are available.</p>
+            </div>
+            <div class="step">
+                <div class="num">3</div>
+                <h3>Find your match</h3>
+                <p>Search and filter to find suitable peers.</p>
+            </div>
+            <div class="step">
+                <div class="num">4</div>
+                <h3>Start learning</h3>
+                <p>Send a request, schedule a session and rate your experience.</p>
+            </div>
+        </div>
+
+        <h2 class="sub-head">What you can do on SkillBridge</h2>
+        <ul class="features">
+            <li>Profile management</li>
+            <li>Skill listing</li>
+            <li>Search and filtering</li>
+            <li>Peer matching</li>
+            <li>Session requests</li>
+            <li>Scheduling</li>
+            <li>Notifications</li>
+            <li>Ratings</li>
+        </ul>
+
+        <h2 class="sub-head">Why peer learning?</h2>
+        <div class="steps">
+            <div class="step">
+                <div class="icon">💬</div>
+                <h3>Easy to understand</h3>
+                <p>Classmates often explain things in the way you understand best.</p>
+            </div>
+            <div class="step">
+                <div class="icon">🧠</div>
+                <h3>Teach to learn</h3>
+                <p>You learn a topic better when you teach it to someone else.</p>
+            </div>
+            <div class="step">
+                <div class="icon">🤝</div>
+                <h3>Free and friendly</h3>
+                <p>No fees, just a helpful campus community.</p>
+            </div>
+        </div>
+
+        <a class="cta" href="register.html">Register Today</a>
+    </section>
+
+    <section id="contact">
+        <h1>Contact Us</h1>
+        <p class="sub">Meet the team behind SkillBridge and connect with us on LinkedIn.</p>
+
+        <div class="profiles">
+            <div class="profile">
+                <div class="avatar">K</div>
+                <h2>Keerthan</h2>
+                <a class="linkedin" href="https://www.linkedin.com/in/keerthan-s-krishna-135780433?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank" rel="noopener">LinkedIn</a>
+            </div>
+            <div class="profile">
+                <div class="avatar">S</div>
+                <h2>Sinan</h2>
+                <a class="linkedin" href="https://www.linkedin.com/in/muhammed-sinan-a-772788295" target="_blank">LinkedIn</a>
+            </div>
+            <div class="profile">
+                <div class="avatar">A</div>
+                <h2>Akansha</h2>
+                <a class="linkedin" href="https://www.linkedin.com/in/aakanksha-choudhary-58767344a" target="_blank">LinkedIn</a>
+            </div>
+        </div>
+
+        <p class="mail">Email us at <a href="mailto:skillbridge@gmail.com">skillbridge@gmail.com</a></p>
     </section>
 
 </body>

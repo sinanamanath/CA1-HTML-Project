@@ -3,197 +3,646 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SKILL BRIDGE</title>
-    <style>
-        *{
-            margin: 0;
-            overflow-x: hidden;
-            scroll-behavior: smooth;
-        }
-        section{
-            display: flex;
-        }
-
-        #side{
-            width: 25%;
-            height: 100vh;
-            background-color: #111d32;
-            text-align: center;
-            position :fixed;
-        }
-
-        #main{
-            width: 75%;
-            height: 100vh;
-            background-color: rgb(248, 248, 248);
-            margin-left: 384px;
-        }
-        #A{
-            display: inline-block;
-            font-size: 20px;
-            font-family:Helvetica, Arial, sans-serif;
-            margin-top: 50px;
-            padding: 10px 25px;
-            color: white;
-            border-radius: 10px;
-            transition: 0.6s;
-            cursor: pointer;
-        }
-        #A:hover{
-            background-color: #4c31e4;
-            border-radius: 15px;
-        }
-        #bar{
-            width: 100%;
-            height: 90px;
-            background-color: rgb(9, 9, 36);
-            position: absolute;
-            bottom: 0;
-            color: white;
-            font-family:Helvetica, Arial, sans-serif;
-            font-size: 20px;
-        }
-        #nav{
-            margin-right: 40px;
-            width: 1152px;
-            height: 90px;
-            background-color: white;
-            box-shadow: 0px 0px 20px rgb(231, 230, 230);
-        }
-        #K:hover{
-            background-color: rgb(215, 214, 214);
-        }
-        .card{
-            width: 235px;
-            height: 200px;
-            background-color: white;
-            border-radius: 20px;
-            border: 1px solid rgb(216, 216, 216);
-            cursor: pointer;
-            transition: 0.5s;
-        }
-        #boxcard{
-            margin-left: 60px;
-            margin-top: 65px;
-            display: flex;
-
-        }
-        #card2,#card3,#card4{
-            margin-left: 30px;
-        } 
-        #card1,#card2,#card3,#card4{
-            text-align: center;
-        } 
-        .card:hover {
-            box-shadow: 0px 0px 10px 0px rgb(212, 211, 211);
-        }
-        iframe{
-            margin-top: 50px;
-            border-radius: 20px;
-            transition: 1s;
-        }
-        iframe:hover{
-            border-radius: 40px;
-            box-shadow: 0px 20px 40px 0px rgb(153, 152, 152);
-        }
-        iframe:last-of-type{
-            margin-bottom: 50px;
-        }
-        #caard{
-            width: 300px;
-            height: 350px;
-            background-color: white;
-            margin-left: 190px;
-            display: inline-block;
-            border-radius: 10px;
-            border: 1px solid rgb(234, 234, 234);
-            box-shadow: 0px 5px 10px 0px rgb(236, 236, 236);
-            transition: 0.7s;
-        }
-        #caard:hover{
-            box-shadow: 0px 10px 20px 0px rgb(196, 196, 196);
-        }
-    </style>
+    <title>SkillBridge</title>
 </head>
+<style>
+    *{
+        margin: 0;
+        font-family: 'Inter', system-ui, -apple-system, sans-serif;
+        scroll-behavior: smooth;
+    }
+    body{
+        background-color: #f8fafc;
+    }
+    aside{
+        width: 280px;
+        height: 100vh;
+        background-color: #0f172a;
+        color: white;
+        position: fixed;
+        padding: 30px 20px;
+        text-align: center;
+    }
+    #title{
+        font-size: 28px;
+        letter-spacing: 0.5px;
+        color: #7279f4;
+        font-weight: 800;
+        text-align: center;
+        padding-bottom: 50px;
+    }
+    #side_ul{
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+    }
+    #side_ul a{
+        text-decoration: none;
+        transition: 0.4s;
+        color: #94a3b8;
+        font-size: 17px;
+        font-weight: 500;
+        padding: 12px 22px;
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+    }
+    #side_ul a:hover{
+        background-color: rgba(99, 102, 241, 0.15);
+        color: #ffffff;
+        transform: translateX(4px);
+    }
+    #logout {
+        position: relative;
+        top: 350px;
+        text-decoration: none;
+        color: #ef4444;
+        background-color: rgba(239, 68, 68, 0.1);
+        padding: 15px 100px;
+        border-radius: 12px;
+        text-align: center;
+        font-weight: 600;
+        transition: 0.4s;
+    }
+    #logout:hover {
+        background: rgba(239, 68, 68, 0.2);
+    }
+    main {
+        margin-left: 320px;
+        width: calc(100% - 400px);
+        padding: 40px;
+        display: flex;
+        flex-direction: column;
+        gap: 35px;
+    }
+    header{
+        background-color: white;
+        padding: 20px 35px;
+        border-radius: 16px;
+        border: 1px solid #e2e8f0;
+    }
+    header h1 {
+        font-size: 22px;
+        font-weight: 700;
+    }
+    #sec1 {
+        background-color: #5956eb;
+        border-radius: 24px;
+        padding: 40px 45px;
+        color: white;
+    }
+    #sec1 h2{
+        font-size: 30px;
+        margin-bottom: 12px;
+    }
+    #sec1 p {
+        font-size: 15px;
+        max-width: 850px;
+        opacity: 0.95;
+        margin-bottom: 22px;
+    }
+    #btn1 {
+        background-color: white;
+        color: #6366f1;
+        border: none;
+        padding: 12px 24px;
+        font-size: 14px;
+        font-weight: 700;
+        border-radius: 10px;
+        cursor: pointer;
+        transition: 0.4s;
+    }
+    #btn1:hover {
+        background: #f1f5f9;
+        transform: translateY(-2px);
+    }
+    #cards1 {
+        display: flex;
+        gap: 25px;
+    }
+    #card {
+        background-color: white;
+        padding: 24px 110px 24px 20px;
+        border-radius: 16px;
+        transition: 0.4s;
+        border: 1px solid #e2e8f0;
+    }
+    #card:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+    }
+    #card h3{
+        font-size: 13px;
+        color: #64748b;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+    }
+    #card #num{
+        font-size: 32px;
+        font-weight: 800;
+        color: #0f172a;
+        margin: 8px 0 4px 0;
+    }
+    .syllabus-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));         
+        gap: 20px;
+    }
+    .syllabus-card {
+        background: #ffffff;
+        border: 1px solid #e2e8f0;
+        border-radius: 16px;
+        padding: 22px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        transition: 0.4s;
+    }
+    .syllabus-card:hover {
+        border-color: #6366f1;
+        box-shadow: 0 8px 25px rgba(99, 102, 241, 0.08);
+        transform: translateY(-2px);
+    }
+    .category-tag {
+        font-size: 11px;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.8px;
+        padding: 4px 10px;
+        border-radius: 20px;
+        background: #e0e7ff;
+        color: #6366f1;
+        width: fit-content;
+        margin-bottom: 12px;
+    }
+    .syllabus-card h4 {
+        font-weight: 700;
+        font-size: 17px;
+        color: #0f172a;
+        margin-bottom: 8px;
+    }
+    .syllabus-card p {
+        color: #64748b;
+        font-size: 13px;
+        margin-bottom: 16px;
+    }
+    .card-footer {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-top: 1px solid #e2e8f0;
+        padding-top: 12px;
+        color: #64748b;
+    }
+    .status-checkbox {
+        cursor: pointer;
+        width: 18px;
+        height: 18px;
+    }
+    .video-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+        gap: 24px;
+    }
+
+    .video-card {
+        background: white;
+        border-radius: 16px;
+        overflow: hidden;
+        border: 1px solid #e2e8f0;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
+        transition: 0.4s;
+    }
+
+    .video-card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+    }
+
+    .video-wrapper {
+        position: relative;
+        padding-bottom: 56.25%;
+        height: 0;
+    }
+
+    .video-wrapper iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border: none;
+    }
+
+    .video-info {
+        padding: 20px;
+    }
+
+    .video-info h3 {
+        font-size: 16px;
+        font-weight: 700;
+        margin-bottom: 6px;
+    }
+
+    .video-info p {
+        font-size: 13px;
+        color: #64748b;
+    }
+    .peers-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+        gap: 20px;
+    }
+
+    .peer-card {
+        background: white;
+        border-radius: 16px;
+        border: 1px solid #e2e8f0;
+        padding: 24px;
+        text-align: center;
+        transition: 0.4s;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .peer-card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+    }
+
+    .peer-avatar{
+        width: 55px;
+        height: 55px;
+        background: green;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 20px;
+        font-weight: 700;
+        color: white;
+        margin-bottom: 2px;
+    }
+
+    .peer-card h3 {
+        font-size: 17px;
+        font-weight: 700;
+    }
+
+    .peer-card p {
+        font-size: 13px;
+        color: #64748b;
+    }
+
+    .skill-tag-container {
+        display: flex;
+        gap: 6px;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin: 4px 0;
+    }
+
+    .skill-pill {
+        font-size: 11px;
+        background: #f1f5f9;
+        color: #0f172a;
+        padding: 4px 10px;
+        border-radius: 6px;
+        font-weight: 600;
+    }
+
+    .btn-msg {
+        background: #6366f1;
+        color: white;
+        border: none;
+        width: 100%;
+        padding: 10px 80px 10px 80px;
+        border-radius: 8px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: 0.4s;
+        margin-top: 8px;
+    }
+
+    .btn-msg:hover {
+        background: #4f46e5;
+    }
+</style>
 <body>
-    <section>
-        <div id="side">
-            <h1 style="font-family:Inter, Helvetica, Arial, sans-serif; color: white; text-align: center; margin: 25px;">
-                SkillBridge
-            </h1>
-            <a href="#nav"><p id="A" style="margin-top: 130px; padding: 10px 35px;">Dashboard</p></a><br>
-            <a href="#Peers"><p id="A">Explore Peers</p><br></a>
-            <a href="#"><p id="A" style="padding: 10px 58px;">Profile</p></a>
-            <div id="bar">
-                <a href="index.html" style=" text-decoration: none;"><p style="margin-top: 39px; color: white;">Log Out</p><a></a></div>
+    <aside>
+        <div>
+            <h1 id="title">SkillBridge</h1>
+            <ul id="side_ul">
+                <li><a href="#das"><span>Dashboard</span></a></li>
+                <li><a href="#syllabus-section"><span>Syllabus Hub</span></a></li>
+                <li><a href="#classes-section"><span>Classes</span></a></li>
+                <li><a href="#peers-section"><span>Peers</span></a></li>
+            </ul>
         </div>
-        <div id="main">
-            <nav id="nav">
-                <h1 style="font-family:Helvetica, Arial, sans-serif; margin-left: 55px; padding-top: 30px;">Dashboard Overview</h1>
-            </nav>
-            <div style="width: 90%; height: 300px; background-color: #5E46E8; margin-left: 60px; margin-top: 60px; border-radius: 30px;">
-                <h1 style="font-family: Helvetica, Arial, sans-serif; padding-top: 30px; margin-left: 45px; font-size: 35px; color: white;">Welcome to Skill Bridge</h1>
-                <p style="font-size: 23px; margin: 30px 50px 0px 50px; font-family: Helvetica, Arial, sans-serif; color: white;">Ready to level up your learning? stream your courses, collaborate with peers, and stay on top of your assignments.Let's get to work.We're so glad you're here to grow with us today. Dive back into your lessons, connect with your classmates, and discover something new</p>
-                <a href="#M"><button id="K" style="padding: 15px; font-size: 17px; margin-left: 47px; margin-top: 25px; border-radius: 10px; border:  none; color: #5E46E8; font-weight: bold; cursor: pointer; transition: 0.5s;">Explore More</button></a>
+        <a href="index.html" id="logout"><span>Log Out</spanp></a>
+    </aside>
+
+    <main>
+        <header id="das">
+            <h1>Dashboard Overview</h1>
+        </header>
+
+        <section id="sec1">
+            <h2>Welcome to Skill Bridge</h2>
+            <p>Master your complete curriculum covering Semantic HTML & Forms, Advanced CSS Styling & Layouts, and JavaScript Fundamentals. Track your progress, explore curated classes, and collaborate with peers seamlessly.</p>
+            <a href="#syllabus-section"><button id="btn1">Explore Syllabus Hub</button></a>
+        </section>
+
+        <div id="cards1">
+            <div id="card">
+                <h3>Core Modules</h3>
+                <div id="num">3</div>
+                <p style="font-size: 13px; color: #64748b;">HTML, CSS & JavaScript</p>
             </div>
-            <div id="boxcard">
-                <div class="card" id="card1"><h2 style="margin-top: 25px;">Total Skills</h2>
-                <h1 style="font-size: 40px; margin-top: 25px;">6</h1>
-                <h2>Skills</h2>
-                </div>
-                <div class="card" id="card2"><h2 style="margin-top: 25px;">Total Topics</h2>
-                <h1 style="font-size: 40px; margin-top: 25px;">5</h1>
-                <h2>Topics</h2>
-                </div>
-                <div class="card" id="card3"><h2 style="margin-top: 25px;">Total Hours</h2>
-                <h1 style="font-size: 40px; margin-top: 25px;">26</h1>
-                <h2>Hours</h2>
-                </div>
-                <div class="card" id="card4"><h2 style="margin-top: 25px;">Our Rating</h2>
-                <h1 style="font-size: 40px; margin-top: 20px; display: inline-block;">4.9 /</h1><h2 style="font-size: 33px; display: inline-block; opacity: 0.7;"> 5.0</h2>
-                <h2>Rating</h2>
-                </div>
+            <div id="card">
+                <h3>Syllabus Topics</h3>
+                <div id="num">28</div>
+                <p style="font-size: 13px; color: #64748b;">Concepts Detailed</p>
             </div>
-            <div id="M" style="text-align: center;">
-                <h1 style="font-family:  Helvetica, Arial, sans-serif; margin-top:57px; font-size: 40px; text-align: center;">Best Classes For You</h1>
-                <iframe width="580" height="335" src="https://www.youtube.com/embed/kUMe1FH4CHE?si=Jt9Ys4dyBY4rzTIP" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                <iframe width="580" height="335" src="https://www.youtube.com/embed/HGTJBPNC-Gw?si=l7eFXebR48DfrThW" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                <iframe width="580" height="335" src="https://www.youtube.com/embed/lfmg-EJ8gm4?si=4qPp0fioJ6B1z-CM" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            <div id="card">
+                <h3>Learning Hours</h3>
+                <div id="num">35+</div>
+                <p style="font-size: 13px; color: #64748b;">Structured Curriculum</p>
             </div>
-            <div id="Peers">
-                <h1 style="margin:57px; font-size: 45px; font-family: Helvetica, Arial, sans-serif;">Explore Peers</h1>
-                <div id="caard" style="text-align: center;">
-                    <h1 style="font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; margin-top: 35px; text-decoration: underline;">Keerthan</h1>
-                    <h2 style="margin-top: 25px;">CSE Core Student</h2>
-                    <h3 style="margin-top: 20px;">SDE aspirant</h3>
-                    <div style="background-color: rgb(219, 219, 219); display: inline-block; margin-top: 30px; border-radius: 7px;"><h3 style="margin: 6px 12px;">Html</h3></div>
-                    <div><a href="#" ><button style=" display:inline-block; margin-top: 26px; width: 75%; border-radius: 7px; border: none; background-color: #4f46e5; cursor: pointer; transition: 0.6s;"><p style="margin: 10px 0px; color: white; font-size: 17px;">Message</p></button></a></div>
-                </div>
-                <div id="caard" style="text-align: center;">
-                    <h1 style="font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; margin-top: 35px; text-decoration: underline;">Aakanksha</h1>
-                    <h2 style="margin-top: 25px;">CSE Core Student</h2>
-                    <h3 style="margin-top: 20px;">SDE aspirant</h3>
-                    <div style="background-color: rgb(219, 219, 219); display: inline-block; margin-top: 30px; border-radius: 7px;"><h3 style="margin: 6px 12px;">Python</h3></div>
-                    <div><a href="#" ><button style=" display:inline-block; margin-top: 26px; width: 75%; border-radius: 7px; border: none; background-color: #4f46e5; cursor: pointer; transition: 0.6s;"><p style="margin: 10px 0px; color: white; font-size: 17px;">Message</p></button></a></div>
-                </div><br><br><br><br>
-                <div id="caard" style="text-align: center;">
-                    <h1 style="font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; margin-top: 35px; text-decoration: underline;">Sinan</h1>
-                    <h2 style="margin-top: 25px;">CSE Core Student</h2>
-                    <h3 style="margin-top: 20px;">SDE aspirant</h3>
-                    <div style="background-color: rgb(219, 219, 219); display: inline-block; margin-top: 30px; border-radius: 7px;"><h3 style="margin: 6px 12px;">Html</h3></div>
-                    <div style="background-color: rgb(219, 219, 219); display: inline-block; margin-top: 30px; border-radius: 7px;"><h3 style="margin: 6px 12px;">CSS</h3></div>
-                    <div style="background-color: rgb(219, 219, 219); display: inline-block; margin-top: 30px; border-radius: 7px;"><h3 style="margin: 6px 12px;">Js</h3></div>
-                    <div><a href="#" ><button style=" display:inline-block; margin-top: 26px; width: 75%; border-radius: 7px; border: none; background-color: #4f46e5; cursor: pointer; transition: 0.6s;"><p style="margin: 10px 0px; color: white; font-size: 17px;">Message</p></button></a></div>
-                </div>
-                <div id="caard" style="text-align: center;">
-                    <h1 style="font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; margin-top: 35px; text-decoration: underline;">Jhon</h1>
-                    <h2 style="margin-top: 25px;">CSE Core Student</h2>
-                    <h3 style="margin-top: 20px;">SDE aspirant</h3>
-                    <div style="background-color: rgb(219, 219, 219); display: inline-block; margin-top: 30px; border-radius: 7px;"><h3 style="margin: 6px 12px;">CSS</h3></div>
-                    <div><a href="#" ><button style=" display:inline-block; margin-top: 26px; width: 75%; border-radius: 7px; border: none; background-color: #4f46e5; cursor: pointer; transition: 0.6s;"><p style="margin: 10px 0px; color: white; font-size: 17px;">Message</p></button></a></div>
-                </div><br><br><br>
+            <div id="card">
+                <h3>Platform Rating</h3>
+                <div id="num">4.9<span style="font-size: 18px; color: #64748b;">/5.0</span></div>
+                <p style="font-size: 13px; color: #64748b;">Verified Student Feedback</p>
             </div>
         </div>
-    </section>
+
+        <section id="syllabus-section">
+            <div class="section-header">
+                <h2 class="section-title" style="margin-bottom: 35px;">Complete Curriculum Hub</h2>
+            </div>
+            
+            <div class="syllabus-grid" id="syllabusGrid">
+                <div class="syllabus-card">
+                    <span class="category-tag">HTML & Forms</span>
+                    <h4>Semantic HTML Elements</h4>
+                    <p>Proper structuring using header, nav, main, section, article, and footer tags.</p>
+                    <div class="card-footer">
+                        <span style="font-size: 12px; font-weight: 600;">Mark Complete</span>
+                        <input type="checkbox" class="status-checkbox">
+                    </div>
+                </div>
+
+                <div class="syllabus-card">
+                    <span class="category-tag">HTML & Forms</span>
+                    <h4>Page Structure and Layout</h4>
+                    <p>Organizing content layout logically for optimal readability and accessibility.</p>
+                    <div class="card-footer">
+                        <span style="font-size: 12px; font-weight: 600;">Mark Complete</span>
+                        <input type="checkbox" class="status-checkbox">
+                    </div>
+                </div>
+
+                <div class="syllabus-card">
+                    <span class="category-tag">HTML & Forms</span>
+                    <h4>Accessibility Fundamentals & Standards</h4>
+                    <p>Implementing ARIA landmarks, alt attributes, and WCAG compliance standards.</p>
+                    <div class="card-footer">
+                        <span style="font-size: 12px; font-weight: 600;">Mark Complete</span>
+                        <input type="checkbox" class="status-checkbox">
+                    </div>
+                </div>
+
+                <div class="syllabus-card">
+                    <span class="category-tag">HTML & Forms</span>
+                    <h4>Forms, Controls & Input Types</h4>
+                    <p>Building forms with fieldsets, legends, labels, radio options, checkboxes, and attributes.</p>
+                    <div class="card-footer">
+                        <span style="font-size: 12px; font-weight: 600;">Mark Complete</span>
+                        <input type="checkbox" class="status-checkbox">
+                    </div>
+                </div>
+
+                <div class="syllabus-card">
+                    <span class="category-tag">HTML & Forms</span>
+                    <h4>Form Validation Basics</h4>
+                    <p>Utilizing native validation constraints like required, pattern, min, and max.</p>
+                    <div class="card-footer">
+                        <span style="font-size: 12px; font-weight: 600;">Mark Complete</span>
+                        <input type="checkbox" class="status-checkbox">
+                    </div>
+                </div>
+
+                <div class="syllabus-card">
+                    <span class="category-tag">HTML & Forms</span>
+                    <h4>Tables & Data Representation</h4>
+                    <p>Structuring clean data tables using thead, tbody, th, td, and scope attributes.</p>
+                    <div class="card-footer">
+                        <span style="font-size: 12px; font-weight: 600;">Mark Complete</span>
+                        <input type="checkbox" class="status-checkbox">
+                    </div>
+                </div>
+
+                <div class="syllabus-card">
+                    <span class="category-tag">HTML & Forms</span>
+                    <h4>Responsive Content Structuring</h4>
+                    <p>Ensuring fluid content hierarchy across various device viewports.</p>
+                    <div class="card-footer">
+                        <span style="font-size: 12px; font-weight: 600;">Mark Complete</span>
+                        <input type="checkbox" class="status-checkbox">
+                    </div>
+                </div>
+
+                <div class="syllabus-card">
+                    <span class="category-tag">Cascading Style Sheets</span>
+                    <h4>Introduction & CSS Selectors</h4>
+                    <p>Mastering basic rules, element, class, ID selectors, and specificity rules.</p>
+                    <div class="card-footer">
+                        <span style="font-size: 12px; font-weight: 600;">Mark Complete</span>
+                        <input type="checkbox" class="status-checkbox">
+                    </div>
+                </div>
+
+                <div class="syllabus-card">
+                    <span class="category-tag">Cascading Style Sheets</span>
+                    <h4>Colors, Backgrounds & Units</h4>
+                    <p>Working with HEX, RGB, HSL color models, gradients, and CSS units (px, rem, em, %).</p>
+                    <div class="card-footer">
+                        <span style="font-size: 12px; font-weight: 600;">Mark Complete</span>
+                        <input type="checkbox" class="status-checkbox">
+                    </div>
+                </div>
+
+                <div class="syllabus-card">
+                    <span class="category-tag">Cascading Style Sheets</span>
+                    <h4>Typography & Text Styling</h4>
+                    <p>Managing font-families, weights, line heights, text decoration, alignment, and shadows.</p>
+                    <div class="card-footer">
+                        <span style="font-size: 12px; font-weight: 600;">Mark Complete</span>
+                        <input type="checkbox" class="status-checkbox">
+                    </div>
+                </div>
+
+                <div class="syllabus-card">
+                    <span class="category-tag">Cascading Style Sheets</span>
+                    <h4>Box Model & Positioning Techniques</h4>
+                    <p>Configuring margins, borders, padding, sizing, and static, relative, absolute, fixed positioning.</p>
+                    <div class="card-footer">
+                        <span style="font-size: 12px; font-weight: 600;">Mark Complete</span>
+                        <input type="checkbox" class="status-checkbox">
+                    </div>
+                </div>
+
+                <div class="syllabus-card">
+                    <span class="category-tag">Cascading Style Sheets</span>
+                    <h4>Flexbox & CSS Grid Layout</h4>
+                    <p>Building single-axis layouts with Flexbox and powerful multi-column designs with CSS Grid.</p>
+                    <div class="card-footer">
+                        <span style="font-size: 12px; font-weight: 600;">Mark Complete</span>
+                        <input type="checkbox" class="status-checkbox">
+                    </div>
+                </div>
+
+                <div class="syllabus-card">
+                    <span class="category-tag">Cascading Style Sheets</span>
+                    <h4>Pseudo Classes, Elements & Attributes</h4>
+                    <p>Styling interactive states (:hover, :focus, :nth-child), pseudo-elements (::before, ::after), and attribute hooks.</p>
+                    <div class="card-footer">
+                        <span style="font-size: 12px; font-weight: 600;">Mark Complete</span>
+                        <input type="checkbox" class="status-checkbox">
+                    </div>
+                </div>
+
+                <div class="syllabus-card">
+                    <span class="category-tag">Cascading Style Sheets</span>
+                    <h4>Form Styling & CSS Variables</h4>
+                    <p>Customizing form inputs cleanly and declaring reusable design tokens using CSS custom properties.</p>
+                    <div class="card-footer">
+                        <span style="font-size: 12px; font-weight: 600;">Mark Complete</span>
+                        <input type="checkbox" class="status-checkbox">
+                    </div>
+                </div>
+
+                <div class="syllabus-card">
+                    <span class="category-tag">Cascading Style Sheets</span>
+                    <h4>Responsive Design, Animations & Transitions</h4>
+                    <p>Implementing media queries, smooth state transitions, and custom keyframe animations.</p>
+                    <div class="card-footer">
+                        <span style="font-size: 12px; font-weight: 600;">Mark Complete</span>
+                        <input type="checkbox" class="status-checkbox">
+                    </div>
+                </div>
+
+                <div class="syllabus-card">
+                    <span class="category-tag">JavaScript Fundamentals</span>
+                    <h4>Introduction, Variables & Constants</h4>
+                    <p>Writing scripts and declaring variables securely using `let`, `const`, and `var` keywords.</p>
+                    <div class="card-footer">
+                        <span style="font-size: 12px; font-weight: 600;">Mark Complete</span>
+                        <input type="checkbox" class="status-checkbox">
+                    </div>
+                </div>
+
+                <div class="syllabus-card">
+                    <span class="category-tag">JavaScript Fundamentals</span>
+                    <h4>Data Types, Operators & Expressions</h4>
+                    <p>Working with arithmetic, comparison, logical expressions, and primitive JavaScript data types.</p>
+                    <div class="card-footer">
+                        <span style="font-size: 12px; font-weight: 600;">Mark Complete</span>
+                        <input type="checkbox" class="status-checkbox">
+                    </div>
+                </div>
+
+                <div class="syllabus-card">
+                    <span class="category-tag">JavaScript Fundamentals</span>
+                    <h4>Strings, Numbers & Boolean Values</h4>
+                    <p>Manipulating string methods, numerical operations, template literals, and boolean conditional logic.</p>
+                    <div class="card-footer">
+                        <span style="font-size: 12px; font-weight: 600;">Mark Complete</span>
+                        <input type="checkbox" class="status-checkbox">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="classes-section">
+            <h2 class="section-title" style="margin-bottom: 35px;">Best Classes For You</h2>
+            <div class="video-container">
+                <div class="video-card">
+                    <div class="video-wrapper">
+                        <iframe src="https://www.youtube.com/embed/kUMe1FH4CHE?si=Jt9Ys4dyBY4rzTIP" allowfullscreen></iframe>
+                    </div>
+                    <div class="video-info">
+                        <h3>HTML & Semantic Layout Masterclass</h3>
+                        <p>Learn best practices for structuring modern web pages with clean semantic elements.</p>
+                    </div>
+                </div>
+
+                <div class="video-card">
+                    <div class="video-wrapper">
+                        <iframe src="https://www.youtube.com/embed/HGTJBPNC-Gw?si=l7eFXebR48DfrThW" allowfullscreen></iframe>
+                    </div>
+                    <div class="video-info">
+                        <h3>Advanced CSS Flexbox & Grid</h3>
+                        <p>Master modern web layouts and responsive design techniques effortlessly.</p>
+                    </div>
+                </div>
+
+                <div class="video-card">
+                    <div class="video-wrapper">
+                        <iframe src="https://www.youtube.com/embed/lfmg-EJ8gm4?si=4qPp0fioJ6B1z-CM" allowfullscreen></iframe>
+                    </div>
+                    <div class="video-info">
+                        <h3>JavaScript Fundamentals for Beginners</h3>
+                        <p>Understand variables, operators, strings, and core programming logic from scratch.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="peers-section">
+            <h2 class="section-title" style="margin-bottom: 35px;">Explore Peers</h2>
+            <div class="peers-grid">
+                <div class="peer-card">
+                    <div class="peer-avatar">K</div>
+                    <h3>Keerthan</h3>
+                    <p>CSE Core Student<br><small>SDE Aspirant</small></p>
+                    <div class="skill-tag-container">
+                        <span class="skill-pill">HTML</span>
+                    </div>
+                    <a href="https://www.linkedin.com/in/keerthan-s-krishna-135780433?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank"><button class="btn-msg">Message</button></a>
+                </div>
+
+                <div class="peer-card">
+                    <div class="peer-avatar" style="background:  #fb7185;">A</div>
+                    <h3>Aakanksha</h3>
+                    <p>CSE Core Student<br><small>SDE Aspirant</small></p>
+                    <div class="skill-tag-container">
+                        <span class="skill-pill">Python</span>
+                    </div>
+                    <a href="https://www.linkedin.com/in/aakanksha-choudhary-58767344a" target="_blank"><button class="btn-msg">Message</button></a>
+                </div>
+
+                <div class="peer-card">
+                    <div class="peer-avatar" style="background: grey">S</div>
+                    <h3>Sinan</h3>
+                    <p>CSE Core Student<br><small>SDE and AI/ML Aspirant</small></p>
+                    <div class="skill-tag-container">
+                        <span class="skill-pill">HTML</span>
+                        <span class="skill-pill">CSS</span>
+                        <span class="skill-pill">JS</span>
+                        <span class="skill-pill">PYTHON</span>
+                    </div>
+                    <a href="https://www.linkedin.com/in/muhammed-sinan-a-772788295" target="_blank"><button class="btn-msg">Message</button></a>
+                </div>
+            </div>
+        </section>
+    </main>
+    
 </body>
 </html>
